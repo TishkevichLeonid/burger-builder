@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {connect} from "react-redux";
 
 import Button from '../../../components/UI/button/Button'
 import classes from "./ContactData.css"
@@ -119,7 +120,7 @@ class ContactData extends Component {
             formData[formElId] = this.state.orderForm[formElId].value
         }
         const order = {
-            ingredients: this.props.ingredients,
+            ingredients: this.props.igns,
             price: this.props.price,
             orderData: formData
         }
@@ -188,4 +189,11 @@ class ContactData extends Component {
     }
 }
 
-export default ContactData
+const mapStateToProps = state => {
+    return {
+        igns: state.ingredients,
+        price: state.totalPrice
+    }
+}
+
+export default connect(mapStateToProps)(ContactData)
