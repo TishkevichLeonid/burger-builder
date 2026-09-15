@@ -12,6 +12,8 @@ import Logout from "./containers/Auth/Logout/Logout";
 
 class App extends Component {
 
+    //
+
     componentDidMount() {
         this.props.onStartUpCheckLogIn()
     }
