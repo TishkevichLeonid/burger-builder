@@ -48,16 +48,4 @@ class App extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onStartUpCheckLogIn: () => dispatch(actions.authCheckState())
-    }
-}
-
-const mapStateToProps = state => {
-    return {
-        isAuth: state.auth.token !== null
-    }
-}
-
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
